@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha384-GLhlTQ8iN17Sme8k0I68JWGGbcjkGSm/EpXQ+PiCAqG60F7juC7ln5zvbHs9S9n" crossorigin="anonymous"> -->
+  <link rel="stylesheet" href="../stylesheets/style.css">
+  <title>VS Code Clone</title>
+</head>
+<body>
+
+  
+  <div id="main">
+
+     <div id="side">
+      <h4>Sasta VS Code</h4>
+      <div id="line"></div>
+      <div class="fileicon">
+        <h5>Folder Name</h5>
+        <div class="icons">
+          <i id="filecreate" class="ri-file-add-fill"></i>
+          <i id="foldercreate" class="ri-folder-add-fill"></i>
+          <i id="referesh" class="ri-refresh-fill"></i>
+        </div>
+      </div>
+
+      <form class="formcreation" id="fileform" action="/filecreate">
+        <input name="filename" type="text" placeholder="filename" > 
+      </form>
+
+      <form  class="formcreation" id="folderform" action="/foldercreate">
+        <input name="foldername" type="text" placeholder="foldername">
+      </form>
+
+      <div class="files">
+          <% files.forEach(function(elem) { %>
+            <h5 class="file">
+
+              <% if(elem.isDirectory()) { %>
+                  <i class="ri-folder-3-fill"></i>
+              <% } else { %>
+                  <i class="ri-file-text-line"></i>
+              <% } %>
+
+              <% if(elem.isDirectory()) { %>
+                  <%= elem.name %>
+              <% } else { %>
+                  <a href="/file/<%= elem.name %>">
+                    <%= elem.name %>
+                  </a>
+                  <i id="editfilename" class="d-flex">❤️</i>
+              <form class="formcreation" id="efilename" action="/editfilename/<%= elem.name %>" method="post">
+                <input name="editfilename" type="text" value="<%= elem.name %>" > 
+              </form>
+              <% } %>
+              
+            </h5>
+        <%  }) %>
+      </div>
+      
+     </div>
+
+     <div id="right">
+        <small>Nothing Here</small>
+     </div>
+  </div>
+
+
+<script>
+
+    function turnoffBoth()
+    {
+      document.querySelectorAll('.formcreation')
+      .forEach(function(elem){
+        elem.style.display =  "none";
+      })
+    }
+
+  document.querySelector("#filecreate")
+  .addEventListener("click",function(){
+        turnoffBoth();
+        document.querySelector("#fileform").style.display = "initial";
+  });
+  document.querySelector("#foldercreate")
+      .addEventListener("click",function(){
+         turnoffBoth();
+         document.querySelector("#folderform").style.display = "initial";
+  });
+
+
+  document.querySelectorAll('.file').forEach(function(file) {
+      file.querySelector("#editfilename").addEventListener("click", function() {
+        turnoffBoth();
+        var form = file.querySelector(".formcreation");
+        form.style.display = "initial";
+     });
+    });
+
+  
+</script>
+</body>
+</html>

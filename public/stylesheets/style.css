@@ -1,0 +1,188 @@
+*{
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
+}
+
+html,body {
+  width: 100%;
+  height: 100%;
+}
+
+#main{
+  display: flex;
+  width: 100%;
+  height: 100vh;
+}
+
+#side{
+  padding: 20px;
+  width: 25%;
+  height: 100%;
+  color: #fff;
+  background-color: #85a79e;
+}
+
+#side h4{
+  color: #353535;
+  font-size: 18px;
+}
+
+#side #line{
+  width: 100%;
+  height: 1px;
+  margin-top: 10px;
+  background-color: #95b4cc;
+}
+
+#side .fileicon{
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#filecreate,#foldercreate,#referesh{
+  cursor: pointer;
+}
+
+#side .fileicon h5{
+  font-weight: 500;
+  font-size: 15px;
+}
+
+#side .fileicon icon{
+        display: flex;
+        gap: 10px;
+}
+
+.file{
+  cursor: pointer;
+  padding: 12px 22px;
+  background-color: #95b4cc;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+#right {
+  position: relative;
+  font-size: 20px;
+  opacity: .2;
+  width: 75%;
+  height: 100%;
+  background-color: #f3f3f3;
+}
+
+#right #rightnav{
+  width: 100%;
+  padding: 10px;
+  
+}
+
+#right .openedfile{
+  padding: 10px 22px;
+  font-size: 14px;
+  font-weight: 500;
+  width: fit-content;
+  background-color: #003e2c;
+  color: #fff;
+  border-radius: 5px;
+}
+
+.openedfile i {
+  margin-left: 10px;
+}
+
+.openedfile i:hover {
+  color: #000000;
+  cursor: pointer;
+}
+
+#right form { 
+  width: 100%;
+  height: calc(100% - 70px);
+}
+
+#right textarea {
+  outline: none;
+  border: none;
+  background-color: transparent;
+  padding: 20px;
+  font-size: 20px;
+  font-family: "Consolas";
+  width: 100%;
+  height: 100%;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
+#right #buttonsave {
+  position: absolute;
+  top: 2%;
+  right: 3%;
+  padding: 8px 17px;
+  border: none;
+  outline: none;
+  background-color: #003e2c;
+  color: #fff;
+  font-weight: 500;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#right #runbutton {
+  position: absolute;
+  top: 2%;
+  right: 10%;
+  padding: 8px 17px;
+  margin-right: 14px;
+  border: none;
+  outline: none;
+  background-color: #003e2c;
+  color: #fff;
+  font-weight: 500;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+
+.fileicon{
+  margin-bottom: 10px;
+}
+
+#side form{
+  display: none;
+}
+
+#side form input{
+  font-weight: 500;
+  width: 100%;
+  padding: 8px 12px;
+  font-size: 16px;
+  border-radius: 5px;
+  outline: none;
+  border: 3px solid #81a69c;
+}
+
+#right small {
+  opacity: .4;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50% , -50%);
+}
+
+/* #edit{
+  color: #000000;
+} */
+
+#editfilename{
+  margin-left: 160px;
+  /* padding-right: 0%; */
+  /* margin-left: 92%; */
+  /* padding-right: 0px; */
+}
